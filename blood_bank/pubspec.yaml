@@ -62,7 +62,8 @@ flutter:
   assets:
     - images/login.png
     - images/login-removebg-preview.png
-  #   - images/a_dot_ham.jpeg
+    - images/add.webp
+    - images/request.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
