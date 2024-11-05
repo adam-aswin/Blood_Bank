@@ -228,7 +228,7 @@ class _HomepageState extends State<Homepage> {
                                     color: Colors.red,
                                     borderRadius: BorderRadius.horizontal(
                                         right: Radius.circular(5))),
-                              )
+                              ),
                             ],
                           ),
                           Row(

@@ -6,11 +6,17 @@ import 'package:blood_bank/under_maintenance/notification.dart';
 import 'package:blood_bank/signuppage.dart';
 import 'package:blood_bank/under_maintenance/settingspage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MaterialApp(
-      home: Homepage(),
+      home: Loginpage(),
       routes: {
         "/home": (context) => Homepage(),
         "/login": (context) => Loginpage(),

@@ -10,6 +10,7 @@ class Loginpage extends StatefulWidget {
 class _LoginpageState extends State<Loginpage> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  bool obs = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +66,8 @@ class _LoginpageState extends State<Loginpage> {
               ),
               child: TextField(
                 controller: _email,
+                cursorColor: Colors.black,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -100,7 +103,19 @@ class _LoginpageState extends State<Loginpage> {
               ),
               child: TextField(
                 controller: _password,
+                cursorColor: Colors.black,
+                obscureText: obs,
                 decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        obs = !obs;
+                      });
+                    },
+                    icon: Icon(obs
+                        ? Icons.remove_red_eye
+                        : Icons.remove_red_eye_outlined),
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
@@ -148,7 +163,9 @@ class _LoginpageState extends State<Loginpage> {
               height: MediaQuery.of(context).size.height * .25,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/sign");
+              },
               child: Text(
                 "Create Account",
                 style: TextStyle(
