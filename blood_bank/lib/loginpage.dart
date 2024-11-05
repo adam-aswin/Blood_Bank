@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Loginpage extends StatefulWidget {
@@ -11,6 +13,12 @@ class _LoginpageState extends State<Loginpage> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   bool obs = true;
+
+  Future logIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _email.text.trim(), password: _password.text.trim());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +159,7 @@ class _LoginpageState extends State<Loginpage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: logIn,
               child: Text(
                 "Login",
                 style: TextStyle(

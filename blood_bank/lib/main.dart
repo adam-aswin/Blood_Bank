@@ -1,6 +1,7 @@
 import 'package:blood_bank/addDonor.dart';
 import 'package:blood_bank/homepage.dart';
 import 'package:blood_bank/loginpage.dart';
+import 'package:blood_bank/mainpage.dart';
 import 'package:blood_bank/under_maintenance/donation.dart';
 import 'package:blood_bank/under_maintenance/notification.dart';
 import 'package:blood_bank/signuppage.dart';
@@ -16,7 +17,7 @@ void main() async {
   );
   runApp(
     MaterialApp(
-      home: Loginpage(),
+      home: Mainpage(),
       routes: {
         "/home": (context) => Homepage(),
         "/login": (context) => Loginpage(),

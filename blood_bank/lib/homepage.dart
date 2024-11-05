@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -10,6 +11,11 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   var scaffoldkey = GlobalKey<ScaffoldState>();
   TextEditingController _search = TextEditingController();
+
+  Future logOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +108,7 @@ class _HomepageState extends State<Homepage> {
                   ],
                 )),
             TextButton(
-                onPressed: () {},
+                onPressed: logOut,
                 child: Row(
                   children: [
                     Icon(
