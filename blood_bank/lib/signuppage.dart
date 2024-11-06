@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Signuppage extends StatefulWidget {
@@ -11,6 +12,23 @@ class _SignuppageState extends State<Signuppage> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _cpassword = TextEditingController();
+  bool obs = true;
+  Future signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _email.text.trim(), password: _password.text.trim());
+    Navigator.pushNamedAndRemoveUntil(context, "/main", (route) => false);
+  }
+
+  void check() {
+    if (_cpassword.text == _password.text) {
+      signUp();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Password doesn't match")),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +83,7 @@ class _SignuppageState extends State<Signuppage> {
                 ],
               ),
               child: TextField(
+                cursorColor: Colors.black,
                 controller: _email,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -100,8 +119,20 @@ class _SignuppageState extends State<Signuppage> {
                 ],
               ),
               child: TextField(
+                cursorColor: Colors.black,
                 controller: _password,
+                obscureText: obs,
                 decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        obs = !obs;
+                      });
+                    },
+                    icon: Icon(obs
+                        ? Icons.remove_red_eye
+                        : Icons.remove_red_eye_outlined),
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
@@ -135,6 +166,7 @@ class _SignuppageState extends State<Signuppage> {
                 ],
               ),
               child: TextField(
+                cursorColor: Colors.black,
                 controller: _cpassword,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -158,7 +190,7 @@ class _SignuppageState extends State<Signuppage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: check,
               child: Text(
                 "Sign up",
                 style: TextStyle(
