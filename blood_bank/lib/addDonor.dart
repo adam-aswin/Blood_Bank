@@ -236,6 +236,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               ],
                             ),
                             child: TextField(
+                              cursorColor: Colors.black,
                               controller: c1,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -283,6 +284,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               ],
                             ),
                             child: TextField(
+                              cursorColor: Colors.black,
                               controller: c2,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
@@ -332,6 +334,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             ),
                             child: TextField(
                               controller: c3,
+                              cursorColor: Colors.black,
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -380,6 +383,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             ),
                             child: TextField(
                               controller: c4,
+                              cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -428,6 +432,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             ),
                             child: TextField(
                               controller: c5,
+                              cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -599,6 +604,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             ),
                             child: TextField(
                               controller: c6,
+                              cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -647,6 +653,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             ),
                             child: TextField(
                               controller: c7,
+                              cursorColor: Colors.black,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Location",

@@ -20,7 +20,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldkey,
-      backgroundColor: const Color.fromARGB(235, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(228, 255, 255, 255),
       appBar: AppBar(
         iconTheme: IconThemeData(),
         leading: IconButton(
@@ -108,7 +108,43 @@ class _HomepageState extends State<Homepage> {
                   ],
                 )),
             TextButton(
-                onPressed: logOut,
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          backgroundColor:
+                              const Color.fromARGB(244, 255, 255, 255),
+                          title: Text(
+                            "Do you want to logout?",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                "Cancel",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  logOut();
+                                });
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                "Logout",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                          ],
+                        );
+                      });
+                },
                 child: Row(
                   children: [
                     Icon(
@@ -339,11 +375,11 @@ class _HomepageState extends State<Homepage> {
                             children: [
                               TextButton(
                                   style: TextButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          side:
-                                              BorderSide(color: Colors.black))),
+                                    backgroundColor: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                  ),
                                   onPressed: () {
                                     Navigator.pushNamed(context, "/donor");
                                   },
@@ -353,11 +389,13 @@ class _HomepageState extends State<Homepage> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(100),
+                                          border: Border.all(
+                                              color: Colors.white, width: 2),
                                           color: Colors.black,
                                         ),
                                         child: Icon(
                                           Icons.add,
-                                          size: 18,
+                                          size: 15,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -367,8 +405,8 @@ class _HomepageState extends State<Homepage> {
                                       Text(
                                         "Add donor",
                                         style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
+                                          color: Colors.white,
+                                          fontSize: 13,
                                         ),
                                       ),
                                     ],
