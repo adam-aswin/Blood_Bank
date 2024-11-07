@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Loginpage extends StatefulWidget {
@@ -168,7 +167,53 @@ class _LoginpageState extends State<Loginpage> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * .25,
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * .29,
+                  height: 10,
+                  child: Divider(),
+                ),
+                Text("Sign In with"),
+                Container(
+                  width: MediaQuery.of(context).size.width * .29,
+                  height: 10,
+                  child: Divider(),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "./lib/icons/facebook.png",
+                    height: 30,
+                    width: 30,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "./lib/icons/google.png",
+                    height: 30,
+                    width: 30,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 70,
             ),
             TextButton(
               onPressed: () {

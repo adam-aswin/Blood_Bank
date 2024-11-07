@@ -76,14 +76,14 @@ class _AdddonorpageState extends State<Adddonorpage> {
                   onPressed: gallery,
                   child: Text(
                     "Gallery",
-                    style: TextStyle(color: Colors.blueAccent[700]),
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
                 TextButton(
                   onPressed: camera,
                   child: Text(
                     "Camera",
-                    style: TextStyle(color: Colors.blueAccent[700]),
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
               ],
@@ -108,7 +108,10 @@ class _AdddonorpageState extends State<Adddonorpage> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: Text("Ok"),
+                    child: Text(
+                      "Ok",
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ],
               );
@@ -125,7 +128,10 @@ class _AdddonorpageState extends State<Adddonorpage> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text("Ok"),
+                        child: Text(
+                          "Ok",
+                          style: TextStyle(color: Colors.black),
+                        ),
                       ),
                     ],
                   );
@@ -176,7 +182,7 @@ class _AdddonorpageState extends State<Adddonorpage> {
                   height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.grey[300],
+                    color: Colors.grey[400],
                   ),
                   child: ClipOval(
                       child: _image != null
@@ -221,7 +227,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -239,7 +244,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               cursorColor: Colors.black,
                               controller: c1,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Name",
                               ),
                             ),
@@ -269,7 +284,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -288,7 +302,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               controller: c2,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Age",
                               ),
                             ),
@@ -318,7 +342,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -337,7 +360,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Email",
                               ),
                             ),
@@ -367,7 +400,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -386,7 +418,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Mobile Number",
                               ),
                             ),
@@ -416,7 +458,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -435,8 +476,18 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "yyyy mm dd",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
+                                hintText: "yyyy-mm-dd",
                               ),
                             ),
                           ),
@@ -482,9 +533,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(_selectedblood == null
-                                    ? "Select a Blood Group"
-                                    : "$_selectedblood"),
+                                _selectedblood == null
+                                    ? Text("Select a Blood Group")
+                                    : Text(
+                                        "$_selectedblood",
+                                        style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 177, 15, 4),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                        ),
+                                      ),
                                 DropdownButton(
                                   icon: Icon(
                                       Icons.arrow_drop_down_circle_outlined),
@@ -536,6 +595,8 @@ class _AdddonorpageState extends State<Adddonorpage> {
                                 children: [
                                   Text("Male"),
                                   Radio(
+                                      activeColor:
+                                          const Color.fromARGB(255, 177, 15, 4),
                                       value: "Male",
                                       groupValue: _isSelected,
                                       onChanged: (String? value) {
@@ -545,6 +606,8 @@ class _AdddonorpageState extends State<Adddonorpage> {
                                       }),
                                   Text("Female"),
                                   Radio(
+                                      activeColor:
+                                          const Color.fromARGB(255, 177, 15, 4),
                                       value: "Female",
                                       groupValue: _isSelected,
                                       onChanged: (String? value) {
@@ -554,6 +617,8 @@ class _AdddonorpageState extends State<Adddonorpage> {
                                       }),
                                   Text("Others"),
                                   Radio(
+                                      activeColor:
+                                          const Color.fromARGB(255, 177, 15, 4),
                                       value: "Others",
                                       groupValue: _isSelected,
                                       onChanged: (String? value) {
@@ -588,7 +653,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -607,7 +671,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Weight(kg)",
                               ),
                             ),
@@ -637,7 +711,6 @@ class _AdddonorpageState extends State<Adddonorpage> {
                           Container(
                             width: MediaQuery.of(context).size.width * .63,
                             height: 50,
-                            padding: EdgeInsets.all(10),
                             // margin: EdgeInsets.only(left: 30, right: 30),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -655,7 +728,17 @@ class _AdddonorpageState extends State<Adddonorpage> {
                               controller: c7,
                               cursorColor: Colors.black,
                               decoration: InputDecoration(
-                                border: InputBorder.none,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color:
+                                        const Color.fromARGB(255, 177, 15, 4),
+                                    width: 2,
+                                  ),
+                                ),
                                 hintText: "Location",
                               ),
                             ),
@@ -676,7 +759,8 @@ class _AdddonorpageState extends State<Adddonorpage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Checkbox(
-                              activeColor: Colors.red[600],
+                              activeColor:
+                                  const Color.fromARGB(255, 177, 15, 4),
                               value: _isChecked,
                               onChanged: (bool? value) {
                                 setState(() {

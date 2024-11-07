@@ -69,6 +69,8 @@ flutter:
     - images/add.webp
     - images/request.webp
     - images/save-a-life-give-blood-logo-removebg-preview.png
+    - lib/icons/google.png
+    - lib/icons/facebook.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

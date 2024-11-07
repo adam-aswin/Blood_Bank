@@ -84,6 +84,7 @@ class _SignuppageState extends State<Signuppage> {
               ),
               child: TextField(
                 cursorColor: Colors.black,
+                keyboardType: TextInputType.emailAddress,
                 controller: _email,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(

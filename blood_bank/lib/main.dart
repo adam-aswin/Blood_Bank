@@ -20,7 +20,7 @@ void main() async {
       home: Mainpage(),
       routes: {
         "/home": (context) => Homepage(),
-        "/main": (context) => Homepage(),
+        "/main": (context) => Mainpage(),
         "/login": (context) => Loginpage(),
         "/sign": (context) => Signuppage(),
         "/donor": (context) => Adddonorpage(),

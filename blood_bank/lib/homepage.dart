@@ -169,13 +169,17 @@ class _HomepageState extends State<Homepage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+        padding: EdgeInsets.only(top: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 50,
               width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -220,6 +224,10 @@ class _HomepageState extends State<Homepage> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: 305,
+              margin: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -425,20 +433,28 @@ class _HomepageState extends State<Homepage> {
             ),
             Expanded(
               flex: 0,
-              child: Text(
-                "Donors",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+              child: Container(
+                margin: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                ),
+                child: Text(
+                  "Donors",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
             Expanded(
               child: ListView.builder(
-                itemCount: 2,
+                padding: EdgeInsets.only(
+                  top: 20,
+                  left: 20,
+                  right: 20,
+                ),
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return Container(
                     padding: EdgeInsets.all(15),
