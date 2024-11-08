@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -16,6 +17,17 @@ class _LoginpageState extends State<Loginpage> {
   Future logIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _email.text.trim(), password: _password.text.trim());
+  }
+
+  Future sigiInWithGoogle() async {
+    final firebaseauth = await FirebaseAuth.instance;
+    final googleservices = await GoogleSignIn();
+    final googleusers = await googleservices.signIn();
+    final GoogleSignInAuthentication? gooleauth =
+        await googleusers!.authentication;
+    final cred = GoogleAuthProvider.credential(
+        accessToken: gooleauth?.accessToken, idToken: gooleauth?.idToken);
+    final user = await firebaseauth.signInWithCredential(cred);
   }
 
   @override
